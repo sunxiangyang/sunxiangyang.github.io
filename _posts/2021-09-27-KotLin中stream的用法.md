@@ -9,16 +9,17 @@ tags:		KotLin						#标签
    
 ---
 #Kotlin中Stream的一些用法
+
 ```kotlin
-val list = listOf("aa","aa", "ab","dd",'ee')
+val list = listOf("aa", "aa", "ab", "dd", "ee")
 //foreach
-list.forEach{
+list.forEach {
     println(it)
 }
 
 //filter
- val filterResult = list.filter { it.startWith("a") }
- 
+val filterResult = list.filter { it.startWith("a") }
+
 //groupBy
-val groupByResult = list.groupBy { it.toString() }
+val groupByResult = list.groupBy { it }
 ```
