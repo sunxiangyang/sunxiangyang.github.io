@@ -5,7 +5,7 @@ date:       2021-09-27 # 时间
 author:     stq 					# 作者
 header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
-tags:		KotLin ,Stream						#标签
+tags:		KotLin Stream						#标签
    
 ---
 #Kotlin中Stream的一些用法
