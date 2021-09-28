@@ -12,25 +12,33 @@ tags:		KotLin Stream						#标签
 
 ```kotlin
 
-val list = listOf("aa", "aa", "ab", "dd", "ee")
-val list2 = listOf("aa", "aa", "ab", "dd", "ee")
+val list  = listOf("aa", "ac", "ab", "dd", "ee")
+val list2 = listOf("aa", "aa", "ag", "dd", "dd")
 //foreach
 list.forEach {
-  
-    println(it)
+    println("list中的元素:$it")
 }
+
 //stream 中迭代对象引用默认为it ,但可以重新指定 例：
-list.forEach { a1->
+list.forEach { a1 ->
     list2.forEach { a2 ->
-    if (a1.equals(a2)){
-        dosomething
-    }
+        if (a1.equals(a2)) {
+            print("重复的元素:$a1")
+        }
     }
 }
 
 //filter
-val filterResult = list.filter { it.startWith("a") }
+list.filter { it.startsWith("a") }.forEach { println("list中以a开头的元素$it") }
 
-//groupBy
-val groupByResult = list.groupBy { it }
+//groupBy 输出结果为{aa=[aa, aa], ag=[ag], dd=[dd, dd]}
+println(list2.groupBy { it })
+
+
+//orderBy 正序
+println("正: ${list.sorted()}")
+
+
+//倒序
+println("倒: ${list.sortedDescending()}")
 ```
