@@ -11,10 +11,21 @@ tags:		KotLin						#标签
 #Kotlin中Stream的一些用法
 
 ```kotlin
+
 val list = listOf("aa", "aa", "ab", "dd", "ee")
+val list2 = listOf("aa", "aa", "ab", "dd", "ee")
 //foreach
 list.forEach {
+  
     println(it)
+}
+//stream 中迭代对象引用默认为it ,但可以重新指定 例：
+list.forEach { a1->
+    list2.forEach { a2 ->
+    if (a1.equals(a2)){
+        dosomething
+    }
+    }
 }
 
 //filter
