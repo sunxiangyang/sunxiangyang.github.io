@@ -93,7 +93,7 @@ pip3 install pip.dep/*.whl
 > 
 
 ## 启动
->
+>gpstart -a 
 
     
    
