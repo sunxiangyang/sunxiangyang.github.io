@@ -8,7 +8,7 @@ catalog: true 						# 是否归档
 tags:								#标签
      postgresql
 ---
-# 外部表的优势
+外部表的优势
 ```
 数据集成和访问：
 
@@ -38,12 +38,12 @@ tags:								#标签
 跨数据库支持：一些外部表实现允许在不同类型的数据库之间建立连接，例如在PostgreSQL中使用postgres_fdw连接到另一个PostgreSQL数据库。
 ```
 以下以postgresql中如何添加一个postgres外部表距离如何使用
-# 激活postgres_fdw拓展
+激活postgres_fdw拓展
 ```sql
 CREATE EXTENSION postgres_fdw;
 ```
 
-# 创建外部服务器对象：在本地数据库中创建一个外部服务器对象，以便连接到远程PostgreSQL数据库。使用CREATE SERVER语句来创建服务器对象
+创建外部服务器对象：在本地数据库中创建一个外部服务器对象，以便连接到远程PostgreSQL数据库。使用CREATE SERVER语句来创建服务器对象
 ```sql
 CREATE SERVER remote_server
 FOREIGN DATA WRAPPER postgres_fdw
@@ -51,7 +51,7 @@ OPTIONS (host 'remote_host', dbname 'remote_database', port 'remote_port');
 
 ```
 
-# 创建外部用户映射：为了在本地数据库和远程服务器之间建立连接，需要创建一个外部用户映射。使用 CREATE USER MAPPING 语句创建映射：
+创建外部用户映射：为了在本地数据库和远程服务器之间建立连接，需要创建一个外部用户映射。使用 CREATE USER MAPPING 语句创建映射：
 
 ```sql
 CREATE USER MAPPING FOR local_user
@@ -59,7 +59,7 @@ SERVER remote_server
 OPTIONS (user 'remote_user', password 'remote_password');
 
 ```
-# 创建外部表：现在可以创建外部表，该表会连接到远程PostgreSQL数据库的表。使用 CREATE FOREIGN TABLE 语句创建外部表:
+创建外部表：现在可以创建外部表，该表会连接到远程PostgreSQL数据库的表。使用 CREATE FOREIGN TABLE 语句创建外部表:
 ```sql
 CREATE FOREIGN TABLE external_table (
     column1 data_type,
@@ -73,10 +73,6 @@ OPTIONS (schema_name 'remote_schema', table_name 'remote_table');
 现在就可以像查询本地表一样查询外部表了
 
 
-# 批量删除表
-```sql
-
-```
 
 
 
